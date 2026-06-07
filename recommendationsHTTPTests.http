@@ -1,0 +1,21 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+### POST: get recommendations (filtered)
+POST http://localhost:8080/api/recommendations
+Content-Type: application/json
+
+{
+  "location": "Shoreditch",
+  "type": "FOOD",
+  "budget": "CHEAP"
+}
+
+### POST: get recommendations (no filters / all)
+POST http://localhost:8080/api/recommendations
+Content-Type: application/json
+
+{
+}
