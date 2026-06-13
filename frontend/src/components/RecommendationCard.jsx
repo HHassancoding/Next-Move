@@ -1,5 +1,1 @@
-function RecommendationCard() {
-  return null
-}
-
-export default RecommendationCard
+export { default } from './BottomSheet'

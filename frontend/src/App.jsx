@@ -1,7 +1,6 @@
-import HomePage from './pages/HomePage.jsx'
-
+import NextMovePage from './pages/NextMovePage'
 function App() {
-  return <HomePage />
+  return <NextMovePage />
 }
 
 export default App

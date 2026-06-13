@@ -1,5 +1,1 @@
-function RecommendationForm() {
-  return null
-}
-
-export default RecommendationForm
+export { default } from './NextMoveApp'
