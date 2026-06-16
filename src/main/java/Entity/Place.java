@@ -10,5 +10,6 @@ public class Place {
   private Type type;
   private Budget budget;
   private String description;
-  private int distance;
+  private double latitude;
+  private double longitude;
 }

@@ -13,6 +13,27 @@ Content-Type: application/json
   "budget": "CHEAP"
 }
 
+### POST: get recommendations (with coordinates)
+POST http://localhost:8080/api/recommendations
+Content-Type: application/json
+
+{
+  "latitude": 51.5035,
+  "longitude": -0.1121,
+  "type": "ACTIVITY",
+  "budget": "CHEAP"
+}
+
+### POST: get recommendations (with coordinates)
+POST http://localhost:8080/api/recommendations
+Content-Type: application/json
+
+{
+  "latitude": 51.5035,
+  "longitude": -0.1121,
+  "type": "VIEW",
+  "budget": "FREE"
+}
 ### POST: get recommendations (no filters / all)
 POST http://localhost:8080/api/recommendations
 Content-Type: application/json
