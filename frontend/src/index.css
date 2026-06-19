@@ -175,6 +175,14 @@ input::placeholder {
   color: #8a3327;
 }
 
+.postcode-field__hint {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #35633d;
+}
+
 .pill-group {
   display: grid;
   gap: 10px;

@@ -28,7 +28,13 @@ public class RecommendationController {
       @Valid @RequestBody RecommendationRequest request
   ){
     System.out.println("Received recommendation request: " + request);
-    List<Place> matches = recommendationService.getRecommendations(request.getType(), request.getBudget());
+    List<Place> matches = recommendationService.getRecommendations(
+        request.getLatitude(),
+        request.getLongitude(),
+        request.getType(),
+        request.getBudget(),
+        request.getExcludedPlacesID()
+    );
     System.out.println("Found " + matches.size() + " matches for request: " + request);
 
     if(matches.isEmpty()) {
@@ -37,9 +43,20 @@ public class RecommendationController {
     }
     List<RecommendationResponse> response = matches.stream().map(p -> {
       RecommendationResponse r = new RecommendationResponse();
+      r.setId(p.getId());
       r.setName(p.getName());
       r.setLocation(p.getArea());
-      r.setDistance(p.getDistance() + "m");
+      if (recommendationService.hasCoordinates(request.getLatitude(), request.getLongitude())) {
+        double distanceKm = recommendationService.calculateDistanceKm(
+            request.getLatitude(),
+            request.getLongitude(),
+            p.getLatitude(),
+            p.getLongitude()
+        );
+        r.setDistance(recommendationService.formatDistanceKm(distanceKm));
+      } else {
+        r.setDistance("N/A");
+      }
       r.setDescription(p.getDescription());
       r.setType(p.getType());
       return r;
