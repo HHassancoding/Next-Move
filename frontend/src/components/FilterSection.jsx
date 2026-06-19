@@ -13,6 +13,7 @@ function FilterField({ label, children }) {
 function FilterSection({
   postcode,
   postcodeError,
+  postcodeHint,
   onPostcodeChange,
   selectedBudget,
   onBudgetSelect,
@@ -36,7 +37,7 @@ function FilterSection({
             type="text"
             inputMode="text"
             autoComplete="postal-code"
-            placeholder="SW1A 1AA"
+            placeholder="SW1A 1AB"
             className="postcode-field__input"
             value={postcode}
             onChange={(event) => onPostcodeChange(event.target.value)}
@@ -47,6 +48,10 @@ function FilterSection({
         {postcodeError ? (
           <p id="postcode-error" className="postcode-field__error">
             {postcodeError}
+          </p>
+        ) : postcodeHint ? (
+          <p className="postcode-field__hint" aria-live="polite">
+            {postcodeHint}
           </p>
         ) : null}
       </FilterField>
