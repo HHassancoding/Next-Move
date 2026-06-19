@@ -35,13 +35,16 @@ public class RecommendationService {
   }
 
 
-	public List<Place> getRecommendations(Double userLatitude, Double userLongitude, Type type, Budget budget) {
+	public List<Place> getRecommendations(Double userLatitude, Double userLongitude, Type type, Budget budget, List<Long> excludePlaceIds) {
 	List<Predicate<Place>> filters = new ArrayList<>();
 		if(type != null) {
 			filters.add(p -> Objects.equals(p.getType(), type));
 		}
 		if(budget != null) {
 			filters.add(p -> Objects.equals(p.getBudget(), budget));
+		}
+		if(excludePlaceIds != null && !excludePlaceIds.isEmpty()) {
+			filters.add(p -> !excludePlaceIds.contains(p.getId()));
 		}
 		Predicate<Place> combinedFilter = filters.stream().reduce(p -> true, Predicate::and);
 

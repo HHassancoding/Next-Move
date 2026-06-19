@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Place {
-  private int id;
+  private Long id;
   private String name;
   private String area;
   private Type type;
@@ -12,4 +12,5 @@ public class Place {
   private String description;
   private double latitude;
   private double longitude;
+  private Long excludePlaceId;
 }

@@ -32,7 +32,8 @@ public class RecommendationController {
         request.getLatitude(),
         request.getLongitude(),
         request.getType(),
-        request.getBudget()
+        request.getBudget(),
+        request.getExcludePlaceIds()
     );
     System.out.println("Found " + matches.size() + " matches for request: " + request);
 
@@ -42,6 +43,7 @@ public class RecommendationController {
     }
     List<RecommendationResponse> response = matches.stream().map(p -> {
       RecommendationResponse r = new RecommendationResponse();
+      r.setId(p.getId());
       r.setName(p.getName());
       r.setLocation(p.getArea());
       if (recommendationService.hasCoordinates(request.getLatitude(), request.getLongitude())) {
