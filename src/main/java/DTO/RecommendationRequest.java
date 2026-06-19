@@ -12,5 +12,5 @@ public class RecommendationRequest {
   private Double longitude;
   private Type type;
   private Budget budget;
-  private List<Long> excludePlaceIds;
+  private List<Long> excludedPlacesID;
 }

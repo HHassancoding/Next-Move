@@ -33,7 +33,7 @@ public class RecommendationController {
         request.getLongitude(),
         request.getType(),
         request.getBudget(),
-        request.getExcludePlaceIds()
+        request.getExcludedPlacesID()
     );
     System.out.println("Found " + matches.size() + " matches for request: " + request);
 

@@ -35,7 +35,7 @@ public class RecommendationService {
   }
 
 
-	public List<Place> getRecommendations(Double userLatitude, Double userLongitude, Type type, Budget budget, List<Long> excludePlaceIds) {
+	public List<Place> getRecommendations(Double userLatitude, Double userLongitude, Type type, Budget budget, List<Long> excludedPlacesID) {
 	List<Predicate<Place>> filters = new ArrayList<>();
 		if(type != null) {
 			filters.add(p -> Objects.equals(p.getType(), type));
@@ -43,8 +43,8 @@ public class RecommendationService {
 		if(budget != null) {
 			filters.add(p -> Objects.equals(p.getBudget(), budget));
 		}
-		if(excludePlaceIds != null && !excludePlaceIds.isEmpty()) {
-			filters.add(p -> !excludePlaceIds.contains(p.getId()));
+		if(excludedPlacesID != null && !excludedPlacesID.isEmpty()) {
+			filters.add(p -> !excludedPlacesID.contains(p.getId()));
 		}
 		Predicate<Place> combinedFilter = filters.stream().reduce(p -> true, Predicate::and);
 
