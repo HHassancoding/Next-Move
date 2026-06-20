@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1, "name": "Horizon 22", "area": "City of London",
+    "type": "VIEW", "budget": "FREE",
+    "description": "London's highest free public viewing gallery with panoramic skyline views.",
+    "latitude": 51.5149, "longitude": -0.0805
+  },
+  {
+    "id": 2, "name": "Dishoom Shoreditch", "area": "Shoreditch",
+    "type": "FOOD", "budget": "CHEAP",
+    "description": "Popular Bombay-style café with great atmosphere and strong brunch and dinner options.",
+    "latitude": 51.5247, "longitude": -0.0783
+  },
+  {
+    "id": 3, "name": "Leake Street Arches", "area": "Waterloo",
+    "type": "ACTIVITY", "budget": "CHEAP",
+    "description": "A graffiti-filled tunnel under Waterloo with street art, bars, food and pop-up entertainment.",
+    "latitude": 51.5031, "longitude": -0.1132
+  },
+  {
+    "id": 4, "name": "Boxpark Shoreditch", "area": "Shoreditch",
+    "type": "FOOD", "budget": "CHEAP",
+    "description": "Shipping-container street food mall with bars and loud music, easy central meeting point.",
+    "latitude": 51.5235297, "longitude": -0.0769493
+  },
+  {
+    "id": 5, "name": "Dishoom Shoreditch Evening", "area": "Shoreditch",
+    "type": "FOOD", "budget": "MEDIUM",
+    "description": "Bombay-style restaurant with shared plates and cocktails, good for longer catchups.",
+    "latitude": 51.5245213, "longitude": -0.0750
+  },
+  {
+    "id": 6, "name": "Camden Market", "area": "Camden",
+    "type": "ACTIVITY", "budget": "CHEAP",
+    "description": "Sprawling canalside market of food stalls, vintage shops and music.",
+    "latitude": 51.541397, "longitude": -0.146612
+  },
+  {
+    "id": 7, "name": "Chin Chin Labs Camden", "area": "Camden",
+    "type": "FOOD", "budget": "CHEAP",
+    "description": "Nitro ice-cream shop inside Camden Market, fun quick stop after browsing nearby stalls.",
+    "latitude": 51.541403, "longitude": -0.1463108
+  },
+  {
+    "id": 8, "name": "The Jazz Cafe", "area": "Camden",
+    "type": "ACTIVITY", "budget": "MEDIUM",
+    "description": "Intimate live music venue with balcony seating, ideal for catching evening gigs.",
+    "latitude": 51.536664, "longitude": -0.139333
+  },
+  {
+    "id": 9, "name": "London Eye", "area": "South Bank",
+    "type": "VIEW", "budget": "EXPENSIVE",
+    "description": "Huge riverside observation wheel offering classic skyline views.",
+    "latitude": 51.503399, "longitude": -0.119519
+  },
+  {
+    "id": 10, "name": "Southbank Centre", "area": "South Bank",
+    "type": "ACTIVITY", "budget": "FREE",
+    "description": "Arts complex with free riverside seating, cafes and regular events.",
+    "latitude": 51.506065, "longitude": -0.11644
+  },
+  {
+    "id": 11, "name": "Bussey Rooftop Bar", "area": "Peckham",
+    "type": "ACTIVITY", "budget": "MEDIUM",
+    "description": "Rooftop bar with city views, covered seating and pizzas.",
+    "latitude": 51.469831, "longitude": -0.068044
+  },
+  {
+    "id": 12, "name": "Peckham Levels", "area": "Peckham",
+    "type": "ACTIVITY", "budget": "CHEAP",
+    "description": "Multi-storey creative hub in old car park with street food, studios and casual bar spaces.",
+    "latitude": 51.470874, "longitude": -0.068576
+  },
+  {
+    "id": 13, "name": "Greenwich Market", "area": "Greenwich",
+    "type": "FOOD", "budget": "CHEAP",
+    "description": "Covered historic market with varied street food stalls.",
+    "latitude": 51.481579, "longitude": -0.009138
+  },
+  {
+    "id": 14, "name": "Greenwich Park Viewpoint", "area": "Greenwich",
+    "type": "VIEW", "budget": "FREE",
+    "description": "Hilltop viewpoint by General Wolfe statue overlooking Canary Wharf and river.",
+    "latitude": 51.477714, "longitude": -0.000737
+  },
+  {
+    "id": 15, "name": "Granary Square Fountains", "area": "King's Cross",
+    "type": "VIEW", "budget": "FREE",
+    "description": "Large square with choreographed fountains and plenty of seating.",
+    "latitude": 51.53540, "longitude": -0.1253
+  },
+  {
+    "id": 16, "name": "Coal Drops Yard", "area": "King's Cross",
+    "type": "ACTIVITY", "budget": "MEDIUM",
+    "description": "Restored railway arches now housing shops, bars and restaurants.",
+    "latitude": 51.535179, "longitude": -0.124691
+  },
+  {
+    "id": 17, "name": "Dishoom King's Cross", "area": "King's Cross",
+    "type": "FOOD", "budget": "MEDIUM",
+    "description": "Popular Bombay café-style restaurant near Granary Square.",
+    "latitude": 51.535179, "longitude": -0.124691
+  },
+  {
+    "id": 18, "name": "Camden Lock Canalside Steps", "area": "Camden",
+    "type": "VIEW", "budget": "FREE",
+    "description": "Canalside steps overlooking Camden Lock, easy spot to sit and people-watch.",
+    "latitude": 51.541397, "longitude": -0.146612
+  },
+  {
+    "id": 19, "name": "Leake Street Graffiti Tunnel", "area": "Waterloo",
+    "type": "ACTIVITY", "budget": "FREE",
+    "description": "Long legal graffiti tunnel under Waterloo station.",
+    "latitude": 51.5025, "longitude": -0.1132
+  },
+  {
+    "id": 20, "name": "Bar Italia", "area": "Soho",
+    "type": "FOOD", "budget": "CHEAP",
+    "description": "Iconic late-opening Italian café ideal for post-theatre coffee.",
+    "latitude": 51.5134174, "longitude": -0.1311994
+  },
+  {
+    "id": 21, "name": "The Breakfast Club Soho", "area": "Soho",
+    "type": "FOOD", "budget": "MEDIUM",
+    "description": "Bustling all-day brunch spot with hearty plates.",
+    "latitude": 51.5147, "longitude": -0.1354
+  },
+  {
+    "id": 22, "name": "Chinatown Gerrard Street", "area": "Soho",
+    "type": "FOOD", "budget": "MEDIUM",
+    "description": "Lively street packed with Chinese restaurants and bakeries.",
+    "latitude": 51.511822, "longitude": -0.131695
+  },
+  {
+    "id": 25, "name": "Southbank Undercroft Skate Space", "area": "South Bank",
+    "type": "ACTIVITY", "budget": "FREE",
+    "description": "Iconic riverside skate undercroft with graffiti and ledges.",
+    "latitude": 51.506065, "longitude": -0.11644
+  }
+]
