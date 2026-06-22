@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'        # or '17' if that’s what your project uses
+          distribution: 'temurin'
+          cache: 'maven'            # caches ~/.m2/repository to speed up builds [web:92][web:99][web:111]
+
+      - name: Build and run tests
+        run: mvn --batch-mode --update-snapshots verify
+        # verify = compile + tests + integration test phase if you ever add it [web:92][web:102]
