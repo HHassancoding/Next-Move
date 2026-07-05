@@ -24,7 +24,7 @@ Content-Type: application/json
   "budget": "CHEAP"
 }
 
-### POST: get recommendations (with coordinates)
+### POST: get recommendations (with coordinates) hello world
 POST http://localhost:8080/api/recommendations
 Content-Type: application/json
 

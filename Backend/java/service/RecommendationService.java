@@ -1,6 +1,5 @@
 package service;
 
-import data.LondonSeedData;
 import Entity.Budget;
 import Entity.Place;
 import Entity.Type;
@@ -25,13 +24,18 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class RecommendationService {
+	private final PlaceDataService placeDataService;
+	public RecommendationService(PlaceDataService placeDataService) {
+		this.placeDataService = placeDataService;
+
+	}
 
   /**
    * Return the raw list of places from the seed data. Kept as a separate method
    * to make testing and future changes (e.g. caching, DB) easier.
    */
   public List<Place> getAllPlaces() {
-	return LondonSeedData.getPlaces();
+	return placeDataService.getAllPlaces();
   }
 
 
