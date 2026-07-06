@@ -22,6 +22,7 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>org.example.NextMoveLondonApplication</start-class>
     </properties>
 
     <dependencies>
@@ -120,6 +121,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.example.NextMoveLondonApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
