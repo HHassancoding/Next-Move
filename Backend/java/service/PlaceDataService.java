@@ -1,44 +1,40 @@
 package service;
 
+import Entity.Budget;
 import Entity.Place;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.annotation.PostConstruct;
-import org.springframework.core.io.ClassPathResource;
+import Entity.Type;
+import Repositories.PlaceRepository;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Collections;
 import java.util.List;
 
 @Service
 public class PlaceDataService {
 
-  private static final String DATA_FILE = "data/london-places.json";
+  private final PlaceRepository placeRepository;
 
-  private final ObjectMapper objectMapper;
-
-  private List<Place> places = Collections.emptyList();
-
-  public PlaceDataService(ObjectMapper objectMapper) {
-    this.objectMapper = objectMapper;
+  public PlaceDataService(PlaceRepository placeRepository) {
+    this.placeRepository = placeRepository;
   }
 
-  @PostConstruct
-  public void loadPlaces() {
-    try (
-
-        InputStream inputStream = new ClassPathResource(DATA_FILE).getInputStream()
-    ) {
-
-      places = objectMapper.readValue(inputStream, new TypeReference<List<Place>>() {});
-
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to load places from JSON file: " + DATA_FILE, e);
-    }
-  }
   public List<Place> getAllPlaces() {
-    return Collections.unmodifiableList(places);
+    return placeRepository.findAll();
+  }
+
+  public List<Place> getPlacesByType(Type type) {
+    return placeRepository.findByType(type);
+  }
+
+  public List<Place> getPlacesByBudget(Budget budget) {
+    return placeRepository.findByBudget(budget);
+  }
+
+  public List<Place> getPlacesByArea(String area) {
+    return placeRepository.findByArea(area);
+  }
+
+  public List<Place> getPlacesByTypeAndBudget(Type type, Budget budget) {
+    return placeRepository.findByTypeAndBudget(type, budget);
   }
 }
+
