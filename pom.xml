@@ -91,7 +91,18 @@
     </dependencyManagement>
 
     <build>
-        <sourceDirectory>Backend/java</sourceDirectory>
+        <sourceDirectory>Backend/src/main/java</sourceDirectory>
+        <testSourceDirectory>Backend/src/test/java</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>Backend/src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>Backend/src/test/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
