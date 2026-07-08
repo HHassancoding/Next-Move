@@ -26,7 +26,7 @@ function FilterSection({
         Filters
       </h2>
 
-      <FilterField label="Where are you?">
+      <FilterField label="WHERE ARE YOU">
         <div className="postcode-field">
           <label className="sr-only" htmlFor="postcode">
             UK postcode
@@ -56,21 +56,21 @@ function FilterSection({
         ) : null}
       </FilterField>
 
-      <FilterField label="Budget">
-        <PillGroup
-          options={budgetOptions}
-          variant="budget"
-          selectedValue={selectedBudget}
-          onSelect={onBudgetSelect}
-        />
-      </FilterField>
-
-      <FilterField label="Type">
+      <FilterField label="WHAT KIND OF MOVE">
         <PillGroup
           options={typeOptions}
           variant="type"
           selectedValue={selectedType}
           onSelect={onTypeSelect}
+        />
+      </FilterField>
+
+      <FilterField label="BUDGET">
+        <PillGroup
+          options={budgetOptions}
+          variant="budget"
+          selectedValue={selectedBudget}
+          onSelect={onBudgetSelect}
         />
       </FilterField>
     </section>
