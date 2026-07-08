@@ -1,65 +1,54 @@
 ---
 name: feature-builder
 description: >
-  Use when adding a new feature to Next Move. Covers branch creation,
-  Spring Boot backend and/or React frontend implementation, test
-  generation, and PR creation with proper issue linking.
+  Use when adding any new feature to Next Move. Determines scope then
+  delegates to the correct specialist agent. Never re-defines conventions
+  that already live in the agent files — those are the single source of truth.
 ---
 
-# Feature Builder – Next Move
+# Feature Builder — Orchestrator
 
-## Step 1 – Clarify Scope
-Before writing any code, ask the user:
-- "Is this backend (Spring Boot), frontend (React/Vite), or full-stack?"
-- "Should I write unit tests for the new code?"
-- "Is there a related GitHub issue number to link?"
+## Step 1 — Clarify Scope
+Ask the user:
+- "Is this backend only, frontend only, or full-stack?"
+- "Is there a related GitHub issue number?"
 
-## Step 2 – Branch
+## Step 2 — Branch
 ```bash
-git checkout -b feat/<kebab-case-feature-name>
+# No issue linked
+git checkout -b feat/<kebab-case-name>
+
+# Issue linked
+git checkout -b feat/issue-<id>-<short-description>
 ```
-If linked to an issue: `feat/issue-<id>-<short-description>`.
 
-## Step 3 – Backend (Spring Boot)
-- Follow the layer order: Controller → Service → Repository.
-- Controllers live under the root package; keep mapping logic out of controllers.
-- Services hold business logic; keep them framework-agnostic where possible.
-- Use SLF4J (`@Slf4j`) for all logging — never `System.out.println`.
-- New endpoints must be tested with an entry in `recommendationsHTTPTests.http`.
-- Generate a JUnit 5 test class under `src/test/java/...` mirroring the main package.
-- Use `@ExtendWith(MockitoExtension.class)` and `@Mock` for dependencies.
-- Run `mvn test` and confirm green before committing.
+## Step 3 — Delegate to the Right Agent
 
-## Step 4 – Frontend (React/Vite)
-- Components live under `frontend/src/components/`.
-- Network calls belong in `frontend/src/api/` — never inline in components.
-- Filter/type constants go in `frontend/src/constraints/options.js` — keep values as uppercase enums.
-- Keep `phase` values strictly: `empty`, `loading`, `success`.
-- Preserve the reroll exclusion list logic in `NextMoveApp.jsx`.
-- Run `cd frontend && npm run lint && npm test` before committing.
+| Scope | Load and follow |
+|---|---|
+| Backend only (Spring Boot) | `.github/copilot/agents/backend.agent.md` |
+| Frontend only (React/Vite) | `.github/copilot/agents/frontend.agent.md` |
+| Full-stack | Both — backend first, then frontend |
 
-## Step 5 – Atomic Commits Per Layer
+Do not re-state or override rules defined in those files. Load them and follow them.
+
+## Step 4 — Push
+```bash
+git push -u origin <branch-name>
 ```
-feat(backend): add <endpoint> for <feature> (#<issue>)
-feat(frontend): add <component> for <feature> (#<issue>)
-test: add unit tests for <feature> (#<issue>)
-```
-Push: `git push -u origin feat/<branch-name>`.
 
-## Step 6 – Pull Request
+## Step 5 — Pull Request
 ```bash
 gh pr create \
   --title "feat: <feature-name> (#<issue>)" \
-  --body "## What
-<description of what was built>
+  --body "Closes #<issue>
 
-## Why
-<reason / issue link>
-Closes #<issue>
+## What
+<what was built and why>
 
 ## Checklist
-- [ ] Backend tests pass (`mvn test`)
-- [ ] Frontend lint passes (`npm run lint`)
+- [ ] Backend tests pass (\`./mvnw verify\`)
+- [ ] Frontend lint + tests pass (\`npm run lint && npm test\`)
 - [ ] Manually tested locally
 - [ ] Docker build unaffected"
 ```
