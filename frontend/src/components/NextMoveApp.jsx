@@ -119,16 +119,19 @@ function NextMoveApp() {
   return (
     <div className="next-move-app">
       <header className="next-move-app__topbar">
-        <p className="next-move-app__brand">Next Move London</p>
+        <p className="next-move-app__brand">- london</p>
+        <hr className="next-move-app__divider" aria-hidden="true" />
       </header>
 
       <main className="next-move-app__main">
         <section className="hero" aria-labelledby="hero-title">
           <h1 id="hero-title" className="hero__title">
-            What’s your next move?
+            find your
+            <br />
+            next move.
           </h1>
           <p className="hero__subtitle">
-            Set where you are, your budget, and what you’re in the mood for.
+            Put in a postcode. Pick your mood. We will do the rest.
           </p>
         </section>
 
@@ -144,7 +147,7 @@ function NextMoveApp() {
         />
 
         <button type="button" className="cta-button" disabled={!canSubmit} onClick={handleSubmit}>
-          Show me one place
+          find my move
         </button>
       </main>
 
