@@ -1,3 +1,8 @@
+---
+name: backend-agent
+description: Backend specialist for the Next Move Spring Boot API and service layers.
+---
+
 # Next Move — Backend Agent
 
 ## Identity

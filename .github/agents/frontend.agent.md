@@ -1,3 +1,8 @@
+---
+name: frontend-agent
+description: Frontend specialist for the Next Move React and Vite single-page app.
+---
+
 # Next Move — Frontend Agent
 
 ## Identity
