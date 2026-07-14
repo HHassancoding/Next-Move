@@ -12,6 +12,15 @@
             </PendingDiffInfo>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Dockerfile">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Dockerfile" />
+              <option name="originalContent" value="FROM maven:3.9-eclipse-temurin-21 AS build&#10;&#10;WORKDIR /app&#10;&#10;COPY pom.xml .&#10;COPY .mvn .mvn&#10;COPY Backend/src src&#10;&#10;RUN mvn clean package -DskipTests&#10;&#10;FROM eclipse-temurin:23-jre-alpine&#10;&#10;WORKDIR /app&#10;&#10;COPY --from=build /app/target/NextMove-1.0-SNAPSHOT.jar app.jar&#10;&#10;EXPOSE 8080&#10;&#10;ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]" />
+              <option name="updatedContent" value="# Use a Maven image that runs JDK 23 to match project's &lt;java.version&gt; (23)&#10;FROM maven:3.9-eclipse-temurin-23 AS build&#10;&#10;WORKDIR /app&#10;&#10;COPY pom.xml .&#10;COPY .mvn .mvn&#10;COPY Backend Backend&#10;&#10;RUN mvn clean package -DskipTests&#10;&#10;FROM eclipse-temurin:23-jre-alpine&#10;&#10;WORKDIR /app&#10;&#10;COPY --from=build /app/target/NextMove-1.0-SNAPSHOT.jar app.jar&#10;&#10;EXPOSE 8080&#10;&#10;ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
