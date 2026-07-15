@@ -19,6 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
     "Mapper",
     "Repositories",
     "data",
+    "Config",
     "org.example"
 })
 @EnableJpaRepositories(basePackages = "Repositories")
