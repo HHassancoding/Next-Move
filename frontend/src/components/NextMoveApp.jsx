@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { geocodePostcode, getRecommendations } from '../api/recommendations'
 import BottomSheet from './BottomSheet'
 import FilterSection from './FilterSection'
+import ArcadeButton from './ui/ArcadeButton'
+import ArcadeHeader from './ui/ArcadeHeader'
 
 const postcodePattern = /^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/
 
@@ -117,47 +119,78 @@ function NextMoveApp() {
   }
 
   return (
-    <div className="next-move-app">
-      <header className="next-move-app__topbar">
-        <p className="next-move-app__brand">- london</p>
-        <hr className="next-move-app__divider" aria-hidden="true" />
-      </header>
+    <div className="min-h-svh bg-dot-grid md:bg-scanlines">
+      <ArcadeHeader />
 
-      <main className="next-move-app__main">
-        <section className="hero" aria-labelledby="hero-title">
-          <h1 id="hero-title" className="hero__title">
-            find your
-            <br />
-            next move.
-          </h1>
-          <p className="hero__subtitle">
-            Put in a postcode. Pick your mood. We will do the rest.
+      <div className="mx-auto max-w-6xl px-4 py-6 md:px-8 md:py-10">
+        <main className="flex flex-col gap-8 md:gap-10">
+          <section className="flex flex-col gap-4" aria-labelledby="hero-title">
+            <h1
+              id="hero-title"
+              className="font-display text-4xl uppercase italic leading-none text-arcade-navy md:text-6xl lg:text-7xl"
+            >
+              FIND YOUR
+              <br />
+              NEXT MOVE.
+            </h1>
+            <p className="max-w-md font-mono-label text-sm text-black/80">
+              Put in a postcode. Pick your mood. We will do the rest.
+            </p>
+            <div className="flex gap-2" aria-hidden="true">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="h-2 w-8 bg-arcade-navy" />
+              ))}
+            </div>
+          </section>
+
+          <section className="mx-auto w-full max-w-3xl">
+            <FilterSection
+              postcode={postcode}
+              postcodeError={postcodeError}
+              postcodeHint={postcodeHint}
+              onPostcodeChange={handlePostcodeChange}
+              selectedBudget={selectedBudget}
+              onBudgetSelect={setSelectedBudget}
+              selectedType={selectedType}
+              onTypeSelect={setSelectedType}
+            />
+
+            <ArcadeButton
+              variant="cta"
+              className="mt-6 w-full py-5 text-lg md:mt-8"
+              disabled={!canSubmit}
+              onClick={handleSubmit}
+            >
+              FIND MY MOVE
+              <svg
+                aria-hidden="true"
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </ArcadeButton>
+          </section>
+
+          <section className="mx-auto w-full max-w-5xl">
+            <BottomSheet
+              phase={phase}
+              recommendation={recommendation}
+              error={error}
+              onAdjustFilters={handleAdjustFilters}
+              onReroll={handleReroll}
+            />
+          </section>
+        </main>
+
+        <footer className="mt-16 hidden border-t-4 border-black bg-black py-8 text-center text-white md:block">
+          <p className="font-mono-label text-xs uppercase tracking-[0.3em]">Next Move Arcade</p>
+          <p className="mt-2 font-mono-label text-[0.65rem] text-white/60">
+            &copy; 2024 NEXT MOVE ARCADE. INSERT COIN TO CONTINUE.
           </p>
-        </section>
-
-        <FilterSection
-          postcode={postcode}
-          postcodeError={postcodeError}
-          postcodeHint={postcodeHint}
-          onPostcodeChange={handlePostcodeChange}
-          selectedBudget={selectedBudget}
-          onBudgetSelect={setSelectedBudget}
-          selectedType={selectedType}
-          onTypeSelect={setSelectedType}
-        />
-
-        <button type="button" className="cta-button" disabled={!canSubmit} onClick={handleSubmit}>
-          find my move
-        </button>
-      </main>
-
-      <BottomSheet
-        phase={phase}
-        recommendation={recommendation}
-        error={error}
-        onAdjustFilters={handleAdjustFilters}
-        onReroll={handleReroll}
-      />
+        </footer>
+      </div>
     </div>
   )
 }
