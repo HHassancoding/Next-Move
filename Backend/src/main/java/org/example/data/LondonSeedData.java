@@ -1,8 +1,8 @@
-package data;
+package org.example.data;
 
-import Entity.Budget;
-import Entity.Place;
-import Entity.Type;
+import org.example.Entity.Budget;
+import org.example.Entity.Place;
+import org.example.Entity.Type;
 
 import java.util.ArrayList;
 import java.util.List;

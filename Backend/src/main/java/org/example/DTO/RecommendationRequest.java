@@ -1,7 +1,7 @@
-package DTO;
+package org.example.DTO;
 
-import Entity.Budget;
-import Entity.Type;
+import org.example.Entity.Budget;
+import org.example.Entity.Type;
 import java.util.List;
 import lombok.Data;
 

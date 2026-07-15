@@ -1,8 +1,10 @@
 package service;
 
-import Entity.Place;
-import Repositories.PlaceRepository;
+import org.example.Entity.Place;
+import org.example.Repositories.PlaceRepository;
 import java.util.List;
+
+import org.example.service.PlaceDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

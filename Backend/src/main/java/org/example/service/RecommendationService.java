@@ -1,8 +1,8 @@
-package service;
+package org.example.service;
 
-import Entity.Budget;
-import Entity.Place;
-import Entity.Type;
+import org.example.Entity.Budget;
+import org.example.Entity.Place;
+import org.example.Entity.Type;
 
 import java.util.ArrayList;
 import java.util.Comparator;

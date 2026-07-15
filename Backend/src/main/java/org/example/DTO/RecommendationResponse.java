@@ -1,6 +1,6 @@
-package DTO;
+package org.example.DTO;
 
-import Entity.Type;
+import org.example.Entity.Type;
 import lombok.Data;
 
 @Data
