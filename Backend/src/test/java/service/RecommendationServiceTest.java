@@ -1,8 +1,10 @@
 package service;
 
-import Entity.Budget;
-import Entity.Place;
-import Entity.Type;
+import org.example.Entity.Budget;
+import org.example.Entity.Place;
+import org.example.Entity.Type;
+import org.example.service.PlaceDataService;
+import org.example.service.RecommendationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

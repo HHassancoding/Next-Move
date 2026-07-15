@@ -46,8 +46,8 @@ The `@SpringBootApplication` annotation was extended with an explicit `scanBaseP
 
 ```java
 @SpringBootApplication(scanBasePackages = {
-    "controller", "service", "DTO",
-    "Entity", "Mapper", "data", "org.example"
+        "org/example/controller", "service", "org/example/DTO",
+        "org/example/Entity", "org/example/Mapper", "data", "org.example"
 })
 ```
 

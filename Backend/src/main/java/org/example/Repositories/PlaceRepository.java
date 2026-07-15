@@ -1,8 +1,8 @@
-package Repositories;
+package org.example.Repositories;
 
-import Entity.Budget;
-import Entity.Place;
-import Entity.Type;
+import org.example.Entity.Budget;
+import org.example.Entity.Place;
+import org.example.Entity.Type;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

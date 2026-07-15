@@ -1,8 +1,8 @@
-package controller;
+package org.example.controller;
 
-import DTO.RecommendationRequest;
-import DTO.RecommendationResponse;
-import Entity.Place;
+import org.example.DTO.RecommendationRequest;
+import org.example.DTO.RecommendationResponse;
+import org.example.Entity.Place;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import service.RecommendationService;
+import org.example.service.RecommendationService;
 
 @RestController
 @RequestMapping("/api")
