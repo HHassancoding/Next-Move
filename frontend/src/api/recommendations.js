@@ -1,3 +1,8 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+if (!API_BASE_URL) {
+  throw new Error('Missing VITE_API_BASE_URL');
+}
 export async function getRecommendations(
   {
    location, 
@@ -22,7 +27,7 @@ export async function getRecommendations(
     payload.longitude = longitude
   }
 
-  const response = await fetch('/api/recommendations', {
+  const response = await fetch(`${API_BASE_URL}/api/recommendations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
