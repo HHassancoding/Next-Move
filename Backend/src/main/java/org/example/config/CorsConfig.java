@@ -13,7 +13,8 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                         "http://localhost:5173",
                         "https://next-move-frontend.ngrok-free.dev",
-                        "https://unequal-recluse-parking.ngrok-free.dev"
+                        "https://unequal-recluse-parking.ngrok-free.dev",
+                        "https://next-move-gamma-lake.vercel.app/"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
