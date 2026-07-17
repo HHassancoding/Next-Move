@@ -14,7 +14,9 @@ public class CorsConfig implements WebMvcConfigurer {
                         "http://localhost:5173",
                         "https://next-move-frontend.ngrok-free.dev",
                         "https://unequal-recluse-parking.ngrok-free.dev",
-                        "https://next-move-gamma-lake.vercel.app/"
+                        "https://next-move-gamma-lake.vercel.app/",
+                        "https://next-move-e3aeo52fl-hamza-flagships.vercel.app/",
+                        "https://next-move-git-main-hamza-flagships.vercel.app/"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
